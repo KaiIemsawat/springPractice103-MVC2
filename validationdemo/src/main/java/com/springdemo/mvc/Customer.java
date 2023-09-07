@@ -14,8 +14,8 @@ public class Customer {
 
     @Min(value = 0, message = "must be greater than or equal to zero")
     @Max(value = 10, message = "must be less than or equal to ten")
-    @NotNull(message = "This field cannot be empty")
-    private int freePasses;
+    @NotNull(message = "Free passes cannot be empty")
+    private Integer freePasses;
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "need to be 5 characters/digits and no special character")
     private String code;
@@ -35,10 +35,10 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 
