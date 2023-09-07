@@ -20,9 +20,15 @@
         <!-- for more info https://www.baeldung.com/spring-thymeleaf-error-messages -->
         <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></span>
         <br/>
+
         <div>Lastname (*) : <input type="text" th:field="*{lastName}" /></div>
         <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
         <br/>
+
+        <div>Free passes (*) : <input type="number" th:field="*{freePasses}"></div>
+        <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>
+        <br/>
+
         <input type="submit" value="Submit"/>
     </form>
 </body>
