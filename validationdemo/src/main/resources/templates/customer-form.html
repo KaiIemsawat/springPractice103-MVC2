@@ -29,6 +29,10 @@
         <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>
         <br/>
 
+        <div>Code : <input type="text" th:field="*{code}"></div>
+        <span th:if="${#fields.hasErrors('code')}" th:errors="*{code}" class="error"></span>
+        <br/>
+
         <input type="submit" value="Submit"/>
     </form>
 </body>

@@ -1,9 +1,6 @@
 package com.springdemo.mvc;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Customer {
 
@@ -17,9 +14,13 @@ public class Customer {
 
     @Min(value = 0, message = "must be greater than or equal to zero")
     @Max(value = 10, message = "must be less than or equal to ten")
+    @NotNull(message = "This field cannot be empty")
     private int freePasses;
 
-//    Getters / Setters
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "need to be 5 characters/digits and no special character")
+    private String code;
+
+//   ----- Getters / Setters -----
     public String getFirstName() {
         return firstName;
     }
@@ -39,5 +40,12 @@ public class Customer {
     }
     public void setFreePasses(int freePasses) {
         this.freePasses = freePasses;
+    }
+
+    public String getCode() {
+        return code;
+    }
+    public void setCode(String code) {
+        this.code = code;
     }
 }
