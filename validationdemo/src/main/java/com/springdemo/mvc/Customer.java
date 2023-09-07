@@ -1,14 +1,17 @@
 package com.springdemo.mvc;
 
+import com.springdemo.mvc.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
 
+//    Since we have a method that will trim out any whitespace (front and back), we can use either @NotBlank or @NotNull
     @NotBlank(message = "Firstname is required")
     @Size(min = 2, message = "Firstname can't me shorter than 2 characters")
     private String firstName;
 
-    @NotBlank(message = "Lastname is required")
+//    Since we have a method that will trim out any whitespace (front and back), we can use either @NotBlank or @NotNull
+    @NotNull(message = "Lastname is required")
     @Size(min = 3, message = "Firstname can't me shorter than 2 characters")
     private String lastName;
 
@@ -19,6 +22,11 @@ public class Customer {
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "need to be 5 characters/digits and no special character")
     private String code;
+
+//    Add custom annotation
+//    We already added message and expected value in CourseCode annotation class. So, message and value are optional here
+    @CourseCode(value = "TANN", message = "Must start with 'TANN'")
+    private String courseCode;
 
 //   ----- Getters / Setters -----
     public String getFirstName() {
@@ -47,5 +55,12 @@ public class Customer {
     }
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }

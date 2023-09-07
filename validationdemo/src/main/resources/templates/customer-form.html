@@ -25,16 +25,21 @@
         <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
         <br/>
 
-<!--        <div>Free passes (*) : <input type="number" th:field="*{freePasses}"></div>-->
-<!--        <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>-->
-<!--        <br/>-->
-
-        <div>Free passes (*) : <input type="text" th:field="*{freePasses}"></div>
+        <div>Free passes (*) : <input type="number" th:field="*{freePasses}"></div>
         <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>
         <br/>
 
+    <!--   For practicing custom message purposes     -->
+<!--        <div>Free passes (*) : <input type="text" th:field="*{freePasses}"></div>-->
+<!--        <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>-->
+<!--        <br/>-->
+
         <div>Code : <input type="text" th:field="*{code}"></div>
         <span th:if="${#fields.hasErrors('code')}" th:errors="*{code}" class="error"></span>
+        <br/>
+
+        <div>Course code : <input type="text" th:field="*{courseCode}"></div>
+        <span th:if="${#fields.hasErrors('courseCode')}" th:errors="*{courseCode}" class="error"></span>
         <br/>
 
         <input type="submit" value="Submit"/>
